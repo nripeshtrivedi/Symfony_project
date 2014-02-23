@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	 <style type="text/css"> 
+		#mydiv 
+		{
+			position:absolute;
+			top: 50%;
+			left: 50%;
+			width:30em;
+			height:6em;
+			margin-top: -9em; /*set to a negative number 1/2 of your height*/
+			margin-left: -15em; /*set to a negative number 1/2 of your width*/
+			border: 1px solid #ccc;
+			background-color: #f3f3f3;
+		}
+
+	</style>
+        <title>All Records</title>
+   </head>
+    <body>
+		<div id="mydiv">
+			{{ form(form) }}
+				<ol id="task">
+					{% for item in task %}
+						<li>{{ item.task }}</li>
+						{{ item.dueDate|date('Y-m-d') }}
+					{% endfor %}
+				</ol>
+		</mydiv>
+    </body>
+</html>
